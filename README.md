@@ -1,4 +1,4 @@
-# infoskate — Chorão Eterno
+# Chorão Eterno
 
 Site-homenagem de fã a Chorão e ao Charlie Brown Jr.: a origem do apelido no skate,
 uma jukebox com os maiores sucessos (tocados pelo player oficial do Spotify),

@@ -3,69 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBJ</title>
-    <link rel="icon" href="/assets/images/logo.png">
+    <title>Orçamento — Chorão Eterno</title>
+    <meta name="description" content="Faça um orçamento de site: informe páginas, tipo de site, protótipo, automações e prazo.">
+    <meta name="theme-color" content="#0d0b0c">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Serif:ital@0;1&display=swap">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/CBJR.css">
-    <style>
-        header {
-            overflow: hidden;
-        }
-        img.logo {
-            float: left;
-            margin-top: 20px;
-        }
-        h1 {
-            margin-top: 0; 
-        }
-        .teste{
-            float: right;
-            margin-right: 80px;
-            margin-top: -95px;
-        }
-    </style>
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="../js/script.js" defer></script>
 </head>
-<body>
-    <header>
-            <a href="/index.html"><img class="logo" src="/assets/images/simbolo.jpg" alt="Simbolo" style="width: 5vw;"></a>
-            <br>
-        <h1>CHORÃO ETERNO</h1>
-        <hr>
-    <section id="secao-orcamento">
-        <h2>Faça um orcamento:</h2>
-        <form action="">
-            <div class="campo linha">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome">
-            </div>
+<body class="page-budget">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-            <div class="campo">
-                <label for="qtde">Quantidade de Páginas</label>
-                <input type="number" id="qtde" min="1">
-            </div>
-            <div class="campo">
-                <label for="tipo">Tipo de Site</label>
-                <select name="tipo" id="tipo">
-                    <option value="1">Estático</option>
-                    <option value="2">Dinâmico</option>
-                </select>
-            </div>
-            <div class="campo linha">
-                <label for="">Precisa de protótipo?</label>
-                <input name="protitipo" type="radio" id="prototipo_sim">
-                <label for="prototipo_sim">Sim, preciso!</label>
-                <input name="protitipo" type="radio" id="prototipo_nao">
-                <label for="prototipo_nao">Não, preciso!</label>
-            </div>
-            <div class="CAMPO linha">
-                <input type="checkbox" id="js">
-                <label for="js">Tem automação com JS</label>
-            </div>
-            <label for="prazo">Prazo:</label>
-            <input type="range" style="width: 200px;">
-            <input type="submit" value="Enviar" style="width: 100px;">
-        </form>
-    </section>
+    <header class="site-header" data-header>
+        <div class="site-header__inner">
+            <a class="brand" href="../../index.html" aria-label="Chorão Eterno — início">
+                <img src="../img/cbjr-logo-cream.png" alt="" width="44" height="44">
+                <span class="brand__name">Chorão<br>Eterno</span>
+            </a>
 
-    </header> 
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+                <span class="menu-toggle__label">Menu</span>
+                <span class="menu-toggle__bars" aria-hidden="true"></span>
+            </button>
+
+            <nav class="nav" id="menu" aria-label="Principal" data-menu>
+                <ul class="nav__list">
+                    <li><a href="../../index.html#origem"><span class="nav__num">01</span>Origem</a></li>
+                    <li><a href="../../index.html#som"><span class="nav__num">02</span>Som</a></li>
+                    <li><a href="../../index.html#banda"><span class="nav__num">03</span>Banda</a></li>
+                </ul>
+                <a class="btn btn--small btn--outline is-current" href="CBJR.html" aria-current="page">Orçamento</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo" class="budget">
+        <div class="container budget__grid">
+            <header class="budget__intro">
+                <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Orçamento</p>
+                <h1 class="budget__title">Faça um<br><span>orçamento</span></h1>
+                <p class="budget__lead">
+                    Conte o que o seu site precisa — número de páginas, tipo, protótipo,
+                    automações e prazo.
+                </p>
+                <img class="budget__sticker" src="../img/cbjr-logo-cream.png" alt="" width="431" height="431" aria-hidden="true">
+            </header>
+
+            <section id="secao-orcamento" class="sheet" aria-labelledby="form-title">
+                <div class="sheet__tape" aria-hidden="true"></div>
+                <h2 class="sheet__title" id="form-title">Ficha do projeto</h2>
+
+                <form class="form" action="" method="get">
+                    <div class="campo linha">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Como podemos te chamar?" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="qtde">Quantidade de páginas</label>
+                        <input type="number" id="qtde" name="qtde" min="1" inputmode="numeric" placeholder="Ex.: 5">
+                    </div>
+
+                    <div class="campo">
+                        <label for="tipo">Tipo de site</label>
+                        <div class="select">
+                            <select name="tipo" id="tipo">
+                                <option value="1">Estático</option>
+                                <option value="2">Dinâmico</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <fieldset class="campo linha choice-group">
+                        <legend>Precisa de protótipo?</legend>
+                        <div class="choices">
+                            <label class="choice" for="prototipo_sim">
+                                <input name="prototipo" type="radio" id="prototipo_sim" value="sim">
+                                <span>Sim, preciso!</span>
+                            </label>
+                            <label class="choice" for="prototipo_nao">
+                                <input name="prototipo" type="radio" id="prototipo_nao" value="nao">
+                                <span>Não preciso</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="campo linha">
+                        <label class="check" for="js">
+                            <input type="checkbox" id="js" name="js" value="sim">
+                            <span class="check__box" aria-hidden="true"></span>
+                            <span>Tem automação com JS</span>
+                        </label>
+                    </div>
+
+                    <div class="campo linha">
+                        <div class="range-head">
+                            <label for="prazo">Prazo</label>
+                            <output for="prazo" class="range-value" data-range-output>4 semanas</output>
+                        </div>
+                        <input type="range" id="prazo" name="prazo" min="1" max="12" value="4" data-range>
+                        <div class="range-scale" aria-hidden="true"><span>1 semana</span><span>12 semanas</span></div>
+                    </div>
+
+                    <div class="campo linha form__submit">
+                        <button class="btn btn--primary" type="submit">
+                            Enviar
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer site-footer--compact">
+        <div class="container">
+            <div class="site-footer__bottom">
+                <p>Homenagem de fã. Fotos, músicas e marcas pertencem aos seus respectivos autores.</p>
+                <a class="site-footer__top-link" href="../../index.html">Voltar para a home <span aria-hidden="true">←</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mostra o prazo escolhido ao lado do controle
+        (function () {
+            var range = document.querySelector('[data-range]');
+            var out = document.querySelector('[data-range-output]');
+            if (!range || !out) return;
+            function paint() {
+                var v = Number(range.value);
+                out.textContent = v + (v === 1 ? ' semana' : ' semanas');
+                range.style.setProperty('--progress', ((v - range.min) / (range.max - range.min)) * 100 + '%');
+            }
+            range.addEventListener('input', paint);
+            paint();
+        })();
+    </script>
 </body>
 </html>

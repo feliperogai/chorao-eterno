@@ -3,66 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBJ - Home</title>
-    <link rel="icon" href="./assets/images/logo.png">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <style>
-        header {
-            overflow: hidden;
-        }
-        img.logo {
-            float: left;
-            margin-top: 20px;
-        }
-        h1 {
-            margin-top: 0; 
-        }
-        .teste{
-            float: right;
-            margin-right: 80px;
-            margin-top: -95px;
-        }
-    </style>
+    <title>Chorão Eterno — homenagem a Chorão e ao Charlie Brown Jr.</title>
+    <meta name="description" content="Uma homenagem de fã a Chorão e ao Charlie Brown Jr.: a origem do apelido no skate, as músicas e a formação da banda.">
+    <meta name="theme-color" content="#0d0b0c">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chorão Eterno">
+    <meta property="og:description" content="“Não chora, anda de skate.” Uma homenagem a Chorão e ao Charlie Brown Jr.">
+    <meta property="og:image" content="assets/img/og-chorao-eterno.jpg">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Serif:ital@0;1&display=swap">
+    <link rel="preload" as="image" type="image/webp" href="assets/img/chorao-palco-1920.webp"
+          imagesrcset="assets/img/chorao-palco-768.webp 768w, assets/img/chorao-palco-1280.webp 1280w, assets/img/chorao-palco-1920.webp 1920w"
+          imagesizes="100vw">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <center>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-        <a href=""><img class="logo" src="/assets/images/simbolo.jpg" alt="Simbolo" style="width: 5vw;"></a>
-        <br>
-        <h1>CHORÃO ETERNO</h1>
-        <a href="./assets/pages/CBJR.html"><button class="teste">BUDGET</button></a>
-        <hr style="color: red;">
-        <img src="../assets/images/Chorão2.jpg" alt="" style="height: vh80;" width="1500"; top = 0; left = 0;>
-        <p>
-            Restou Chorão, que explicou a origem do apelido, diretamente ligada ao seu passado como atleta de skateboarding. 
-            A galera do skate sempre bota apelidos e tal, e eu era meio tímido, ficava só olhando. Então, passou um cara um dia e falou, 
-            'Pô, não chora, anda de skate'. Aí passou outro, 'Não chora, anda de skate'.
-        </p>
+    <header class="site-header" data-header>
+        <div class="site-header__inner">
+            <a class="brand" href="index.html" aria-label="Chorão Eterno — início">
+                <img src="assets/img/cbjr-logo-cream.png" alt="" width="44" height="44">
+                <span class="brand__name">Chorão<br>Eterno</span>
+            </a>
 
-        <br><br>
-        <a href="https://www.youtube.com/watch?v=1JtPSIppxSA"><img src="/assets/images/CharlieBrownJr.png" alt="" style="width: 15vw;">
-            <br>
-            <audio controls src="./assets/images/Charlie Brown Jr - Proibida Pra Mim.mp3"></audio>
-            <br><br>
-        <a href="https://www.youtube.com/watch?v=423K3pipX3c"><button>Dias de Luta, Dias de Glória</button></a>
-        <a href="https://www.youtube.com/watch?v=DzhwydXmtH4"><button>Céu Azul</button></a>
-        <a href="https://www.youtube.com/watch?v=vMMrM6XH0HM"><button>Senhor do Tempo</button></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+                <span class="menu-toggle__label">Menu</span>
+                <span class="menu-toggle__bars" aria-hidden="true"></span>
+            </button>
 
-        <br><br><br>
-
-        <section>
-            <ul>
-                <a href="https://pt.wikipedia.org/wiki/Chor%C3%A3o_(cantor)"><h2>Chorão</h2></a>
-                <a href="https://pt.wikipedia.org/wiki/Champignon_(m%C3%BAsico)"><h2>Champignon</h2></a>
-                <a href="https://pt.wikipedia.org/wiki/Marc%C3%A3o_Britto"><h2>Marcão Britto</h2></a>
-                <a href="https://pt.wikipedia.org/wiki/Thiago_Castanho"><h2>Thiago Castanho</h2></a>
-            </ul>
-                <br><br>
-        </center>
-        </section>
+            <nav class="nav" id="menu" aria-label="Principal" data-menu>
+                <ul class="nav__list">
+                    <li><a href="#origem"><span class="nav__num">01</span>Origem</a></li>
+                    <li><a href="#som"><span class="nav__num">02</span>Som</a></li>
+                    <li><a href="#banda"><span class="nav__num">03</span>Banda</a></li>
+                </ul>
+                <a class="btn btn--small btn--outline" href="assets/pages/CBJR.html">Orçamento</a>
+            </nav>
+        </div>
     </header>
-    <link rel="stylesheet" href="../assets/js/script.js">
+
+    <main id="conteudo">
+        <!-- HERO -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__media">
+                <picture>
+                    <source type="image/webp"
+                            srcset="assets/img/chorao-palco-768.webp 768w, assets/img/chorao-palco-1280.webp 1280w, assets/img/chorao-palco-1920.webp 1920w"
+                            sizes="100vw">
+                    <img src="assets/img/chorao-palco-1280.jpg"
+                         srcset="assets/img/chorao-palco-768.jpg 768w, assets/img/chorao-palco-1280.jpg 1280w, assets/img/chorao-palco-1920.jpg 1920w"
+                         sizes="100vw" width="1920" height="1080"
+                         alt="Chorão no palco, de touca, sob um holofote azul, com o braço tatuado erguido para o público."
+                         fetchpriority="high">
+                </picture>
+            </div>
+
+            <div class="hero__content container">
+                <p class="eyebrow hero__eyebrow"><span class="dot" aria-hidden="true"></span>Charlie Brown Jr. · Santos, SP</p>
+
+                <h1 class="hero__title" id="hero-title">
+                    <span class="hero__line">Chorão</span>
+                    <span class="hero__line hero__line--outline">Eterno</span>
+                </h1>
+
+                <div class="hero__bottom">
+                    <p class="hero__lead">
+                        Antes do microfone, havia o skate. Uma homenagem ao vocalista
+                        que levou a rua, a prancha e o rock de Santos para o Brasil inteiro.
+                    </p>
+                    <div class="hero__actions">
+                        <a class="btn btn--primary" href="#som" data-play-jump>
+                            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+                            Ouvir “Proibida pra Mim”
+                        </a>
+                        <a class="btn btn--ghost" href="#origem">De onde vem o nome <span aria-hidden="true">↓</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <img class="hero__sticker" src="assets/img/cbjr-logo-cream.png" alt="" width="431" height="431" aria-hidden="true">
+            <p class="hero__meta" aria-hidden="true">Alexandre Magno Abrão<br>1970 — 2013</p>
+        </section>
+
+        <!-- MARQUEE -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee__track">
+                <span>Não chora, anda de skate</span><span class="marquee__star">✺</span>
+                <span>Não chora, anda de skate</span><span class="marquee__star">✺</span>
+                <span>Não chora, anda de skate</span><span class="marquee__star">✺</span>
+                <span>Não chora, anda de skate</span><span class="marquee__star">✺</span>
+                <span>Não chora, anda de skate</span><span class="marquee__star">✺</span>
+                <span>Não chora, anda de skate</span><span class="marquee__star">✺</span>
+            </div>
+        </div>
+
+        <!-- ORIGEM -->
+        <section class="origin section" id="origem" aria-labelledby="origem-title">
+            <div class="container origin__grid">
+                <header class="section-head origin__head" data-reveal>
+                    <p class="section-head__num">01</p>
+                    <h2 class="section-head__title" id="origem-title">A origem<br>do apelido</h2>
+                </header>
+
+                <figure class="origin__photo" data-reveal>
+                    <div class="origin__frame">
+                        <picture>
+                            <source type="image/webp" srcset="assets/img/chorao-skate.webp">
+                            <img src="assets/img/chorao-skate.jpg" width="696" height="464" loading="lazy"
+                                 alt="Chorão saltando de skate no palco durante um show, microfone na mão, com a banda ao fundo.">
+                        </picture>
+                    </div>
+                    <figcaption class="caption">Skate no palco — onde tudo começou.</figcaption>
+                </figure>
+
+                <div class="origin__text" data-reveal>
+                    <blockquote class="quote">
+                        <p>“Pô, não chora,<br>anda de skate.”</p>
+                    </blockquote>
+                    <p class="origin__body">
+                        O próprio Chorão explicou: o apelido vem do seu passado como atleta de skateboarding.
+                        <q>A galera do skate sempre bota apelidos e tal, e eu era meio tímido, ficava só olhando.
+                        Então, passou um cara um dia e falou, ‘Pô, não chora, anda de skate’. Aí passou outro,
+                        ‘Não chora, anda de skate’.</q>
+                    </p>
+                    <p class="origin__kicker">O “não chora” virou <strong>Chorão</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOM -->
+        <section class="sound section" id="som" aria-labelledby="som-title">
+            <div class="sound__glow" aria-hidden="true"></div>
+            <div class="container">
+                <header class="section-head" data-reveal>
+                    <p class="section-head__num">02</p>
+                    <h2 class="section-head__title" id="som-title">Aumenta o som</h2>
+                </header>
+
+                <div class="sound__grid">
+                    <div class="record" data-reveal data-record>
+                        <div class="record__disc" aria-hidden="true">
+                            <img class="record__label" src="assets/img/cbjr-logo-ink.png" alt="" width="431" height="431" loading="lazy">
+                        </div>
+                        <a class="record__sleeve" href="https://www.youtube.com/watch?v=1JtPSIppxSA" target="_blank" rel="noopener">
+                            <picture>
+                                <source type="image/webp" srcset="assets/img/abalando-sua-fabrica.webp">
+                                <img src="assets/img/abalando-sua-fabrica.jpg" width="640" height="640" loading="lazy"
+                                     alt="Capa do álbum “100% Charlie Brown Jr. — Abalando a Sua Fábrica”, com os integrantes ilustrados sobre listras vermelhas e amarelas.">
+                            </picture>
+                            <span class="record__cta">Assistir no YouTube <span aria-hidden="true">↗</span></span>
+                        </a>
+                    </div>
+
+                    <div class="sound__side">
+                        <div class="player" data-player data-reveal>
+                            <p class="eyebrow"><span class="dot dot--live" aria-hidden="true"></span>Faixa no site</p>
+                            <h3 class="player__title">Proibida pra Mim</h3>
+                            <p class="player__artist">Charlie Brown Jr.</p>
+
+                            <audio class="player__audio" controls preload="metadata" src="assets/audio/proibida-pra-mim.mp3" data-audio>
+                                Seu navegador não suporta áudio. <a href="assets/audio/proibida-pra-mim.mp3">Baixe a faixa</a>.
+                            </audio>
+
+                            <div class="player__ui" hidden data-player-ui>
+                                <button class="player__play" type="button" aria-label="Tocar" data-play>
+                                    <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+                                    <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4.5h4.2v15H6zm7.8 0H18v15h-4.2z" fill="currentColor"/></svg>
+                                </button>
+                                <div class="player__track">
+                                    <input class="player__range" type="range" min="0" max="100" step="0.1" value="0"
+                                           aria-label="Posição da música" data-seek>
+                                    <div class="player__times">
+                                        <span data-current>0:00</span>
+                                        <span data-duration>--:--</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player__bars" aria-hidden="true">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+
+                        <div class="setlist" data-reveal>
+                            <div class="setlist__tape" aria-hidden="true"></div>
+                            <p class="setlist__label">Setlist <span>— assista no YouTube</span></p>
+                            <ol class="setlist__list">
+                                <li>
+                                    <a href="https://www.youtube.com/watch?v=423K3pipX3c" target="_blank" rel="noopener">
+                                        <span class="setlist__n">01</span>
+                                        <span class="setlist__song">Dias de Luta, Dias de Glória</span>
+                                        <span class="setlist__go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/watch?v=DzhwydXmtH4" target="_blank" rel="noopener">
+                                        <span class="setlist__n">02</span>
+                                        <span class="setlist__song">Céu Azul</span>
+                                        <span class="setlist__go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/watch?v=vMMrM6XH0HM" target="_blank" rel="noopener">
+                                        <span class="setlist__n">03</span>
+                                        <span class="setlist__song">Senhor do Tempo</span>
+                                        <span class="setlist__go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANDA -->
+        <section class="band section" id="banda" aria-labelledby="banda-title">
+            <div class="container">
+                <header class="section-head band__head" data-reveal>
+                    <p class="section-head__num">03</p>
+                    <h2 class="section-head__title" id="banda-title">A banda</h2>
+                    <p class="band__note">Quatro nomes que ficaram. Toque em cada um para ler a história completa na Wikipédia.</p>
+                </header>
+
+                <ol class="lineup">
+                    <li data-reveal>
+                        <a href="https://pt.wikipedia.org/wiki/Chor%C3%A3o_(cantor)" target="_blank" rel="noopener">
+                            <span class="lineup__role">Voz</span>
+                            <span class="lineup__name">Chorão</span>
+                            <span class="lineup__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                    <li data-reveal>
+                        <a href="https://pt.wikipedia.org/wiki/Champignon_(m%C3%BAsico)" target="_blank" rel="noopener">
+                            <span class="lineup__role">Baixo</span>
+                            <span class="lineup__name">Champignon</span>
+                            <span class="lineup__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                    <li data-reveal>
+                        <a href="https://pt.wikipedia.org/wiki/Marc%C3%A3o_Britto" target="_blank" rel="noopener">
+                            <span class="lineup__role">Guitarra</span>
+                            <span class="lineup__name">Marcão Britto</span>
+                            <span class="lineup__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                    <li data-reveal>
+                        <a href="https://pt.wikipedia.org/wiki/Thiago_Castanho" target="_blank" rel="noopener">
+                            <span class="lineup__role">Guitarra</span>
+                            <span class="lineup__name">Thiago Castanho</span>
+                            <span class="lineup__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="finale" aria-labelledby="finale-title">
+            <div class="container finale__inner">
+                <p class="eyebrow eyebrow--ink">Pra fechar o show</p>
+                <h2 class="finale__title" id="finale-title" data-reveal>
+                    Dias de luta,<br><em>dias de glória.</em>
+                </h2>
+                <div class="finale__actions" data-reveal>
+                    <a class="btn btn--ink" href="https://www.youtube.com/watch?v=423K3pipX3c" target="_blank" rel="noopener">
+                        <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+                        Assistir no YouTube
+                    </a>
+                    <a class="btn btn--ink-ghost" href="#som">Voltar ao som</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__top">
+                <a class="site-footer__brand" href="#conteudo" aria-label="Voltar ao início">
+                    <img src="assets/img/cbjr-logo-cream.png" alt="" width="96" height="96" loading="lazy">
+                    <span>Chorão<br>Eterno</span>
+                </a>
+
+                <nav class="site-footer__col" aria-label="Rodapé">
+                    <p class="site-footer__label">Navegue</p>
+                    <ul>
+                        <li><a href="#origem">Origem do apelido</a></li>
+                        <li><a href="#som">Som</a></li>
+                        <li><a href="#banda">A banda</a></li>
+                        <li><a href="assets/pages/CBJR.html">Orçamento</a></li>
+                    </ul>
+                </nav>
+
+                <div class="site-footer__col">
+                    <p class="site-footer__label">Ouça</p>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=423K3pipX3c" target="_blank" rel="noopener">Dias de Luta, Dias de Glória</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=DzhwydXmtH4" target="_blank" rel="noopener">Céu Azul</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=vMMrM6XH0HM" target="_blank" rel="noopener">Senhor do Tempo</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="site-footer__bottom">
+                <p>Homenagem de fã. Fotos, músicas e marcas pertencem aos seus respectivos autores.</p>
+                <a class="site-footer__top-link" href="#conteudo">Voltar ao topo <span aria-hidden="true">↑</span></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
-

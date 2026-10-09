@@ -590,100 +590,24 @@ body::-webkit-scrollbar-thumb { background: var(--paper-2); border: 3px solid va
 }
 .chip-link:hover { color: var(--paper); border-color: var(--paper); }
 
-/* ---------- Capas tipográficas ---------- */
+/* ---------- Capas dos discos ---------- */
 .cover {
-    --c-bg: var(--paper);
-    --c-fg: var(--ink);
-    --c-ac: var(--red);
     position: relative;
     display: block;
     width: 100%;
     aspect-ratio: 1;
     overflow: hidden;
-    isolation: isolate;
-    background: var(--c-bg);
-    color: var(--c-fg);
+    background: var(--ink-3);
 }
-.cover[data-color="yellow"] { --c-bg: #f2b705; --c-fg: var(--ink); --c-ac: var(--red); }
-.cover[data-color="blue"] { --c-bg: #1f3bd1; --c-fg: var(--paper); --c-ac: #f2b705; }
-.cover[data-color="red"] { --c-bg: var(--red); --c-fg: var(--paper); --c-ac: var(--ink); }
-.cover[data-color="ink"] { --c-bg: #1c1718; --c-fg: var(--paper); --c-ac: var(--red); }
-.cover[data-color="violet"] { --c-bg: var(--violet); --c-fg: var(--paper); --c-ac: var(--ink); }
-
-.cover::before {
+.cover img { width: 100%; height: 100%; object-fit: cover; }
+.cover::after {
     content: "";
     position: absolute;
     inset: 0;
-    z-index: -1;
+    box-shadow: inset 0 0 0 1px rgba(13, 11, 12, 0.12);
+    pointer-events: none;
 }
-.cover[data-motif="stripes"]::before {
-    background: repeating-linear-gradient(180deg, transparent 0 14%, var(--c-ac) 14% 19%);
-    opacity: 0.9;
-    mask-image: linear-gradient(180deg, #000 0 55%, transparent 55%);
-    -webkit-mask-image: linear-gradient(180deg, #000 0 55%, transparent 55%);
-}
-.cover[data-motif="dots"]::before {
-    background: radial-gradient(circle, var(--c-ac) 0 32%, transparent 34%) 0 0 / 16% 16%;
-    mask-image: linear-gradient(135deg, #000 0 50%, transparent 50%);
-    -webkit-mask-image: linear-gradient(135deg, #000 0 50%, transparent 50%);
-}
-.cover[data-motif="waves"]::before {
-    background: repeating-radial-gradient(circle at 100% 0, transparent 0 7%, var(--c-ac) 7% 9%);
-    opacity: 0.85;
-}
-.cover[data-motif="grid"]::before {
-    background:
-        linear-gradient(90deg, var(--c-ac) 2px, transparent 2px) 0 0 / 20% 20%,
-        linear-gradient(180deg, var(--c-ac) 2px, transparent 2px) 0 0 / 20% 20%;
-    opacity: 0.55;
-}
-.cover[data-motif="circle"]::before {
-    background: radial-gradient(circle at 70% 32%, var(--c-ac) 0 30%, transparent 30.5%);
-}
-.cover[data-motif="bars"]::before {
-    background: repeating-linear-gradient(90deg, var(--c-ac) 0 6%, transparent 6% 14%);
-    mask-image: linear-gradient(90deg, transparent 0 40%, #000 40%);
-    -webkit-mask-image: linear-gradient(90deg, transparent 0 40%, #000 40%);
-}
-.cover[data-motif="split"]::before {
-    background: linear-gradient(160deg, transparent 0 58%, var(--c-ac) 58%);
-}
-
-.cover__year {
-    position: absolute;
-    top: 8%;
-    left: 8%;
-    font-size: clamp(0.6rem, 0.9vw, 0.75rem);
-    font-weight: 700;
-    letter-spacing: 0.16em;
-}
-.cover__short {
-    position: absolute;
-    left: 7%;
-    bottom: 5%;
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: clamp(2.4rem, 4.5vw, 4rem);
-    line-height: 0.85;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-}
-.cover__brand {
-    position: absolute;
-    top: 8%;
-    right: 7%;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: clamp(0.7rem, 1vw, 0.85rem);
-    letter-spacing: 0.08em;
-    writing-mode: vertical-rl;
-}
-.cover--photo img { width: 100%; height: 100%; object-fit: cover; }
-
 .cover--mini { width: 3.25rem; flex: none; }
-.cover--mini .cover__year,
-.cover--mini .cover__brand { display: none; }
-.cover--mini .cover__short { font-size: 0.95rem; left: 9%; bottom: 7%; }
 
 /* ---------- 02 Sucessos / jukebox ---------- */
 .hits {
@@ -1002,7 +926,6 @@ body::-webkit-scrollbar-thumb { background: var(--paper-2); border: 3px solid va
     gap: 0.75rem 1rem;
 }
 .shelf__nav .round-btn { color: var(--ink); }
-.shelf__note { flex: 1 1 18rem; font-size: 0.8rem; color: rgba(13, 11, 12, 0.6); }
 
 .album-detail {
     display: grid;
